@@ -10,7 +10,7 @@ fastify.register(require('fastify-static'), {
 })
 
 fastify.register(require('fastify-cors'), {
-  origin: "http://192.168.0.183",
+  origin: "http://localhost",
   methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
   credentials: true
 });
@@ -38,7 +38,7 @@ fastify.ready(err => {
 // Run the server!
 const start = async () => {
   try {
-    await fastify.listen(process.env.PORT || 3000, '192.168.0.183')
+    await fastify.listen(process.env.PORT || 3000, '0.0.0.0')
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
