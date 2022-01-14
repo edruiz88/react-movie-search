@@ -17,7 +17,7 @@ const App: React.FC<{}> = () => {
   const already = movies.length > 0;
 
   const searchMovie = async (query: string) =>{
-    const base = 'http://192.168.0.183:3000/';
+    const base = 'http://localhost:3000/';
     setLoading(true);
     setStart(true)
     error&&setError({show:false, text:''})
