@@ -4,7 +4,7 @@
   <p align="center" dir="auto">
     A movie search app made using reactjs and fastify
     <br>
-    <a href="https://github.com/edruiz88/react-movie-search/" rel="nofollow">View Demo</a>
+    <a href="https://movsearchapp.herokuapp.com/" rel="nofollow">View Demo</a>
     ·
     <a href="https://github.com/edruiz88/react-movie-search/issues">Report Bug</a>
     ·
