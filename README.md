@@ -33,7 +33,7 @@
     
 3.  Run the app server
     ```
-    run: node app
+    node app
     ```
 
 [](#roadmap)Roadmap
