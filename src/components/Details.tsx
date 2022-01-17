@@ -1,8 +1,8 @@
 import React from "react";
 
 interface detailsProps {
-   back(arg: Array<any>): void,
-   data: Array<any>,
+   back(arg: any): void,
+   data: any,
    url: string
 }
 
@@ -12,7 +12,7 @@ const SearchBar: React.FC<detailsProps> = (props) => {
 
   return (
     <div className={'details'}>
-      <div className={'back'} onClick={()=>props.back([])}><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke="#fff"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg></div>
+      <div className={'back'} onClick={()=>props.back({})}><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke="#fff"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg></div>
       <div className={'cntnr'}>
          <div className={'card-detail'}>
             <div className={'card-image-box'}><img className={'card-image'} src={thumb?thumb:'img/no-img2.png'} alt={'img'} /></div>
