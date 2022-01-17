@@ -5,7 +5,7 @@ interface moviesProps {
   data: Array<any>,
   loading: boolean,
   url: string,
-  open(arg: Array<any>): void
+  open(arg: any): void
 }
 
 const ItemResult: React.FC<moviesProps> = (props) => {
@@ -19,7 +19,7 @@ const ItemResult: React.FC<moviesProps> = (props) => {
           <img src={e.img&&api?thumb+e.img:e.img&&!api?e.img:'img/no-img.png'} />
           <div className={'cntnt'}>
             <div className={'header'}>
-              <a className={'title'} onClick={()=>props.open([e])}>{e.title}</a>
+              <a className={'title'} onClick={()=>props.open(e)}>{e.title}</a>
               <Icon.Star color={'#6c757d'} size={'20'}/>
               <div className={'rating'}>{(+e.rating).toFixed(1)}</div>
             </div>
