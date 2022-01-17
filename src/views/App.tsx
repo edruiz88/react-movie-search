@@ -9,7 +9,7 @@ import Details from "../components/Details";
 
 const App: React.FC<{}> = () => {
   const [movies, setMovies] = useState<String[]>([]);
-  const [details, setDetails] = useState<String[]>([]);
+  const [details, setDetails] = useState<any>([]);
   const [error, setError] = useState<any>({show:false, text:''});
   const [url, setUrl] = useState<string>('api-query/');
   const [loading, setLoading] = useState<boolean>(false);
@@ -20,7 +20,7 @@ const App: React.FC<{}> = () => {
     const base = 'http://localhost:3000/';
     setLoading(true);
     setStart(true)
-    error&&setError({show:false, text:''})
+    error.show&&setError({show:false, text:''})
     
     await axios(base+url+query)
     .then((res)=>{
@@ -33,14 +33,22 @@ const App: React.FC<{}> = () => {
         setLoading(false);
       });
   }
+  
+  const reset=()=>{
+    setMovies([])
+    setStart(false)
+    error.show&&setError({show:false, text:''})
+  }
 
   return (
     <div className={'container'}>
-      {details.length>0?<Details data={details} url={url} back={setDetails} />:
+      {Object.keys(details).length>0?<Details data={details} url={url} back={setDetails} />:
       <div className={'d-flex'}>
         <div className={'search'} style={{top:start?'14%':'40%'}}>
+          <img className={`img-icon${start?' gone':''}`} src={'/img/movie-icon.png'} alt={'icon'}/>
           <QueryType setUrl={setUrl} />
-          <SearchBar search={searchMovie} loading={loading} />
+          <SearchBar search={searchMovie} loading={loading} start={start} reset={reset} />
+          <span>Created by: <a href={'https://eruiz.herokuapp.com/'} target={'_blank'}>Eduardo Ruiz</a></span>
         </div>
         {movies&&!loading&&<ItemResult data={movies} url={url} loading={loading} open={setDetails} />}
         {loading&&<Placeholder show={already} />}
