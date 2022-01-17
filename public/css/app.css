@@ -106,6 +106,10 @@ body, html {
     .err-txt {
       font-size: 18px !important;
     }
+    .img-icon {
+      top: -245px !important;
+      width: 120px !important;
+    }
 }
 
 .d-flex{
@@ -155,13 +159,27 @@ body, html {
     width: 100%;
     transition: top 0.4s linear;
 }
-/* .searchbar:hover > .search_input {
-    padding: 0 10px;
-    width: 450px;
-    caret-color: red;
-    transition: width 0.4s linear;
-} */
-
+.img-icon {
+    position: absolute;
+    top: -275px;
+    transform: scale(1);
+    transition: transform 0.3s linear;
+}
+.img-icon.gone {
+    transform: scale(0) !important; 
+}
+.search span {
+    position: absolute;
+    bottom: -10px;
+    font-weight: bold;
+}
+.search span a {
+    color: #763cb0;
+    text-decoration: none;
+}
+.search span a:hover {
+    text-decoration: underline;
+}
 .search_input {
     color: #63696e;
     border: 0;
@@ -174,7 +192,22 @@ body, html {
     transition: width 0.4s linear;
     line-height: 40px;
 }
-
+.reset_search {
+    position: absolute;
+    right: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.reset_search:hover {
+    background-color: #e5eaec;
+    color:red
+}
 .search_icon {
     position: absolute;
     right: 5px;
@@ -217,6 +250,7 @@ body, html {
 }
 .sel-item:hover, .sel-item.active  {
     background-color: #763cb0;
+    box-shadow: 0 2px 3px rgb(32 33 36 / 25%);
 }
 
 .sel-text {
