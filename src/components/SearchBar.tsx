@@ -3,6 +3,8 @@ import * as Icon from '../components/icons/'
 
 interface funcProps {
   search(arg: String): void,
+  reset(): void,
+  start: boolean,
   loading: boolean
 }
 
@@ -23,6 +25,7 @@ const SearchBar: React.FC<funcProps> = (props) => {
         <input className={'search_input'} type={'text'} onChange={(e)=>setQuery(e.target.value)} placeholder={'Search by movie title...'}/>
         <button className={`search_icon${props.loading?' progress':''}`} type={'submit'}><Icon.Search color={color} size={'24'}/></button>
       </form>
+      {props.start&&<div className={'reset_search d-flex'} onClick={()=>props.reset()}>x</div>}
     </div>
   );
 };
