@@ -9,7 +9,7 @@ import Details from "../components/Details";
 
 const App: React.FC<{}> = () => {
   const [movies, setMovies] = useState<String[]>([]);
-  const [details, setDetails] = useState<any>([]);
+  const [details, setDetails] = useState<any>({});
   const [error, setError] = useState<any>({show:false, text:''});
   const [url, setUrl] = useState<string>('api-query/');
   const [loading, setLoading] = useState<boolean>(false);
